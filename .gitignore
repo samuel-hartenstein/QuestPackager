@@ -89,3 +89,9 @@ crashlytics-build.properties
 *.meta
 #But not source file with postfix. which is everything but a folder
 !*.*.meta
+
+/Assets/AssetBundles/*
+/Assets/AssetsToBundle/*
+*.asset
+projectVersion.txt
+Packages/*

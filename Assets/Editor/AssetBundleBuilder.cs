@@ -8,14 +8,21 @@ using System.Collections.Generic;
 public static class AssetBundleBuilder
 {
   private const string DefaultAssetsDir = "Assets/AssetsToBundle";
+  private const string DefaultOutputDir = "Assets/AssetBundles";
 
   [MenuItem("Build/Build AssetBundles From Parameters")]
   public static void BuildAssetBundlesFromParams()
   {
     var args = Environment.GetCommandLineArgs();
-    string outputPath = GetArg(args, "-outputPath") ?? "Assets/AssetBundles";
+    string outputPath = GetArg(args, "-outputPath") ?? DefaultOutputDir;
     string bundleName = GetArg(args, "-bundleName");
     string assetsArg = GetArg(args, "-assetPaths");
+
+    if (string.IsNullOrEmpty(assetsArg) && !AssetDatabase.IsValidFolder(DefaultAssetsDir))
+    {
+      Directory.CreateDirectory(DefaultAssetsDir);
+      AssetDatabase.Refresh();
+    }
 
     List<string> assetPathsList = new List<string>();
     if (string.IsNullOrEmpty(assetsArg))
