@@ -27,7 +27,11 @@ def cleanup_files(asset_path, bundle_path, bundle_output_path):
 
 async def handle_client(websocket, args):
     print(f"Connection from {websocket.remote_address}")
-    
+
+    # Ensure needed directories exist
+    os.makedirs(args.asset_save_path, exist_ok=True)
+    os.makedirs(args.bundle_output_path, exist_ok=True)
+
     # Clean up before receiving new files
     bundle_path = os.path.join(args.bundle_output_path, args.bundle_name)
     cleanup_files(args.asset_save_path, bundle_path, args.bundle_output_path)
