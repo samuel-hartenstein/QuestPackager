@@ -85,8 +85,8 @@ async def main():
         description="Asset WebSocket Server for Unity AssetBundle building"
     )
     parser.add_argument(
-        '--ip', default='localhost',
-        help='IP to listen on (default: localhost)'
+        '--ip', default='0.0.0.0',
+        help='IP to listen on (default: 0.0.0.0)'
     )
     parser.add_argument(
         '--port', type=int, default=8765,
