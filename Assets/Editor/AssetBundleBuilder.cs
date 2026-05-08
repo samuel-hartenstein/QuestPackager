@@ -77,7 +77,7 @@ public static class AssetBundleBuilder
     BuildPipeline.BuildAssetBundles(
         outputPath,
         buildMap,
-        BuildAssetBundleOptions.UncompressedAssetBundle | BuildAssetBundleOptions.DeterministicAssetBundle,
+        BuildAssetBundleOptions.UncompressedAssetBundle,
         EditorUserBuildSettings.activeBuildTarget
     );
 
