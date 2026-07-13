@@ -93,5 +93,10 @@ crashlytics-build.properties
 /Assets/AssetBundles/*
 /Assets/AssetsToBundle/*
 *.asset
+# XR settings must travel with the repo: bundles built WITHOUT OpenXR/SPI configured
+# lack stereo shader variants -> generated shaders render stretched/mismatched per eye.
+!/Assets/XR/**/*.asset
 projectVersion.txt
 Packages/*
+!Packages/manifest.json
+!Packages/packages-lock.json
