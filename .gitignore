@@ -96,7 +96,8 @@ crashlytics-build.properties
 # XR settings must travel with the repo: bundles built WITHOUT OpenXR/SPI configured
 # lack stereo shader variants -> generated shaders render stretched/mismatched per eye.
 !/Assets/XR/**/*.asset
-projectVersion.txt
+# The Unity version is pinned through ProjectSettings/ProjectVersion.txt, which IS tracked.
 Packages/*
 !Packages/manifest.json
 !Packages/packages-lock.json
+*.slnx
